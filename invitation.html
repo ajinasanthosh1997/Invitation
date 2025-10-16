@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sajina & Arjun | Wedding Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #fef7f9 0%, #f5e6f8 100%);
+            color: #5a4a4a;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #8b5f8a 0%, #c97b84 50%, #f3a6a6 100%);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover;
+            filter: brightness(0.7) sepia(0.3);
+            animation: gentleZoom 25s ease-in-out infinite alternate;
+        }
+
+        @keyframes gentleZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 40px;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .ornament {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: gentleFloat 4s ease-in-out infinite;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+        }
+
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-15px) scale(1.05); }
+        }
+
+        .hero-content h1 {
+            font-size: 72px;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            font-family: 'Cinzel', serif;
+            animation: textGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes textGlow {
+            0% { text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+            100% { text-shadow: 2px 2px 20px rgba(255,255,255,0.3); }
+        }
+
+        .couple-names {
+            font-size: 56px;
+            font-weight: bold;
+            margin: 30px 0;
+            background: linear-gradient(45deg, #f9e4e4, #f0d6e8, #e6c8ec);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: none;
+            animation: nameShimmer 4s ease-in-out infinite;
+            font-family: 'Cinzel', serif;
+            position: relative;
+            padding: 10px 0;
+        }
+
+        @keyframes nameShimmer {
+            0%, 100% { filter: brightness(1); background-position: 0% 50%; }
+            50% { filter: brightness(1.2); background-position: 100% 50%; }
+        }
+
+        .couple-names::before, .couple-names::after {
+            content: "✿";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.7);
+            animation: rotateFlower 8s linear infinite;
+        }
+
+        .couple-names::before {
+            left: -40px;
+        }
+
+        .couple-names::after {
+            right: -40px;
+        }
+
+        @keyframes rotateFlower {
+            0% { transform: translateY(-50%) rotate(0deg); }
+            100% { transform: translateY(-50%) rotate(360deg); }
+        }
+
+        .divider {
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+            margin: 30px auto;
+            position: relative;
+        }
+
+        .divider::before, .divider::after {
+            content: "❦";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .divider::before {
+            left: 0;
+        }
+
+        .divider::after {
+            right: 0;
+        }
+
+        .date-text {
+            font-size: 24px;
+            letter-spacing: 4px;
+            margin-top: 20px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+            animation: pulseDate 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseDate {
+            0%, 100% { opacity: 0.9; }
+            50% { opacity: 1; }
+        }
+
+        .details-section {
+            background: linear-gradient(135deg, #f8f0f5 0%, #f5e8f0 100%);
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .details-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23e6c8ec' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            animation: subtleMove 30s linear infinite;
+        }
+
+        @keyframes subtleMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(20px, 20px); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .detail-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(139, 95, 138, 0.15);
+            transform: translateY(0);
+            transition: all 0.4s ease;
+            animation: fadeIn 1s ease-out;
+            border: 1px solid rgba(139, 95, 138, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .detail-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #c97b84, #8b5f8a, #c97b84);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .detail-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .detail-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(139, 95, 138, 0.25);
+        }
+
+        .detail-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: gentleBounce 3s ease-in-out infinite;
+            filter: drop-shadow(0 3px 5px rgba(0,0,0,0.1));
+        }
+
+        @keyframes gentleBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .detail-card h3 {
+            font-size: 28px;
+            color: #8b5f8a;
+            margin-bottom: 15px;
+            font-family: 'Cinzel', serif;
+            position: relative;
+            display: inline-block;
+        }
+
+        .detail-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, #c97b84, #8b5f8a);
+            transition: width 0.3s ease;
+        }
+
+        .detail-card:hover h3::after {
+            width: 80px;
+        }
+
+        .detail-card p {
+            font-size: 18px;
+            color: #5a4a4a;
+            line-height: 1.8;
+        }
+
+        .couple-photo-section {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #f5e8f0 0%, #f0d6e8 100%);
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 48px;
+            color: #8b5f8a;
+            margin-bottom: 60px;
+            letter-spacing: 4px;
+            animation: fadeInUp 1s ease-out;
+            font-family: 'Cinzel', serif;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #c97b84, #8b5f8a);
+        }
+
+        .hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.7);
+            animation: floatHeart 10s linear infinite;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .countdown {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .countdown-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #5a4a4a;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            min-width: 80px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .countdown-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #8b5f8a;
+            font-family: 'Cinzel', serif;
+        }
+
+        .countdown-label {
+            font-size: 14px;
+            color: #5a4a4a;
+            margin-top: 5px;
+        }
+
+        .locations-section {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #f0d6e8 0%, #e6c8ec 100%);
+        }
+
+        .locations-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .location-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(139, 95, 138, 0.2);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .location-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(139, 95, 138, 0.3);
+        }
+
+        .location-header {
+            padding: 30px;
+            text-align: center;
+            background: linear-gradient(135deg, #8b5f8a, #c97b84);
+            color: white;
+        }
+
+        .location-header h3 {
+            font-size: 32px;
+            font-family: 'Cinzel', serif;
+            margin-bottom: 10px;
+        }
+
+        .location-header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .location-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .location-map {
+            height: 300px;
+            width: 100%;
+            border: none;
+        }
+
+        .location-details {
+            padding: 30px;
+        }
+
+        .location-details p {
+            margin-bottom: 15px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+
+        .location-details i {
+            margin-right: 10px;
+            color: #8b5f8a;
+            width: 20px;
+        }
+
+        .location-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #c97b84, #8b5f8a);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(139, 95, 138, 0.3);
+        }
+
+        .location-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(139, 95, 138, 0.4);
+        }
+
+        /* Download Section */
+        .download-section {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #f9e4e4 0%, #f5e8f0 100%);
+            text-align: center;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 20px 60px;
+            font-size: 24px;
+            color: white;
+            background: linear-gradient(135deg, #c97b84 0%, #8b5f8a 100%);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(139, 95, 138, 0.3);
+            transition: all 0.3s ease;
+            animation: gentlePulse 3s ease-in-out infinite;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .download-button:hover::before {
+            left: 100%;
+        }
+
+        @keyframes gentlePulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 10px 30px rgba(139, 95, 138, 0.3); }
+            50% { transform: scale(1.03); box-shadow: 0 15px 40px rgba(139, 95, 138, 0.4); }
+        }
+
+        .download-button:hover {
+            box-shadow: 0 15px 40px rgba(139, 95, 138, 0.4);
+            transform: translateY(-5px);
+        }
+
+        /* Carousel Styles */
+        .carousel-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 500px;
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.7);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .carousel-nav:hover {
+            background: rgba(255,255,255,0.9);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev {
+            left: 20px;
+        }
+
+        .carousel-next {
+            right: 20px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-indicator.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        /* Festive Effects */
+        .balloon {
+            position: absolute;
+            width: 40px;
+            height: 50px;
+            border-radius: 50%;
+            animation: floatBalloon 15s linear infinite;
+            z-index: 5;
+        }
+
+        .balloon::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 30px;
+            background: rgba(255,255,255,0.7);
+        }
+
+        @keyframes floatBalloon {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% {
+                transform: translateY(-100px) rotate(10deg);
+                opacity: 0;
+            }
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            opacity: 0;
+            animation: confettiFall 5s linear forwards;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        footer {
+            background: #8b5f8a;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 48px;
+            }
+            .couple-names {
+                font-size: 36px;
+            }
+            .section-title {
+                font-size: 32px;
+            }
+            .countdown-timer {
+                gap: 10px;
+            }
+            .countdown-item {
+                min-width: 60px;
+                padding: 10px;
+            }
+            .countdown-number {
+                font-size: 24px;
+            }
+            .locations-container {
+                grid-template-columns: 1fr;
+            }
+            .carousel-slide {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="ornament">💕</div>
+            <h1>WE'RE GETTING MARRIED</h1>
+            <div class="divider"></div>
+            <div class="couple-names">SAJINA & ARJUN</div>
+            <div class="divider"></div>
+            <p class="date-text">NOVEMBER 3, 2025</p>
+            
+            <div class="countdown">
+                <div class="countdown-title">Counting Down To Our Special Day</div>
+                <div class="countdown-timer">
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="days">00</div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="hours">00</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="minutes">00</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="seconds">00</div>
+                        <div class="countdown-label">Seconds</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hearts">
+            <div class="heart" style="left: 10%; animation-delay: 0s;">💖</div>
+            <div class="heart" style="left: 30%; animation-delay: 2s;">💗</div>
+            <div class="heart" style="left: 50%; animation-delay: 4s;">💝</div>
+            <div class="heart" style="left: 70%; animation-delay: 6s;">💕</div>
+            <div class="heart" style="left: 90%; animation-delay: 8s;">💞</div>
+        </div>
+    </div>
+
+    <div class="details-section">
+        <div class="container">
+            <h2 class="section-title">WEDDING DETAILS</h2>
+            <div class="details-grid">
+                <div class="detail-card" style="animation-delay: 0.2s;">
+                    <div class="detail-icon">📅</div>
+                    <h3>When</h3>
+                    <p><strong>Monday</strong></p>
+                    <p>November 3, 2025</p>
+                    <p>10:00 AM - 10:30 AM</p>
+                </div>
+                <div class="detail-card" style="animation-delay: 0.4s;">
+                    <div class="detail-icon">💒</div>
+                    <h3>Ceremony</h3>
+                    <p><strong>Traditional Wedding</strong></p>
+                    <p>Join us for a beautiful celebration</p>
+                    <p>of love and unity</p>
+                </div>
+                <div class="detail-card" style="animation-delay: 0.6s;">
+                    <div class="detail-icon">🎉</div>
+                    <h3>Reception</h3>
+                    <p><strong>Celebration & Dinner</strong></p>
+                    <p>Following the ceremony</p>
+                    <p>at the Auditorium</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="locations-section">
+        <div class="container">
+            <h2 class="section-title">WEDDING LOCATIONS</h2>
+            <div class="locations-container">
+                <div class="location-card">
+                    <div class="location-header">
+                        <i class="location-icon">🛕</i>
+                        <h3>Wedding Ceremony</h3>
+                        <p>Kangarappadi Temple</p>
+                    </div>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.031935372218!2d75.78472217506962!3d11.258933289160228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65b5c6d1e41d7%3A0x2d3c2d1e3d3d3d3d!2sKangarappadi%20Temple!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin" 
+                        class="location-map" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="location-details">
+                        <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Kangarappadi Temple, Swamy Bhukli, Kshetra Sannidhyil</p>
+                        <p><i class="far fa-clock"></i> <strong>Time:</strong> 10:00 AM - 10:30 AM</p>
+                        <p><i class="fas fa-calendar-alt"></i> <strong>Date:</strong> Monday, November 3, 2025</p>
+                        <a href="https://maps.app.goo.gl/dT2j1BmRdZfwXWvn7?g_st=aw" target="_blank" class="location-button">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="location-card">
+                    <div class="location-header">
+                        <i class="location-icon">🏛️</i>
+                        <h3>Reception</h3>
+                        <p>Auditorium Venue</p>
+                    </div>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.031935372218!2d75.78472217506962!3d11.258933289160228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65b5c6d1e41d7%3A0x2d3c2d1e3d3d3d3d!2sAuditorium%20Venue!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin" 
+                        class="location-map" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="location-details">
+                        <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Auditorium Venue, Reception Hall</p>
+                        <p><i class="far fa-clock"></i> <strong>Time:</strong> 11:00 AM onwards</p>
+                        <p><i class="fas fa-calendar-alt"></i> <strong>Date:</strong> Monday, November 3, 2025</p>
+                        <a href="https://maps.app.goo.gl/J3bL39CP9SV4ui3b9?g_st=aw" target="_blank" class="location-button">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="couple-photo-section">
+        <div class="container">
+            <h2 class="section-title">OUR MOMENTS</h2>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800" alt="Couple Photo 1">
+                        <div class="carousel-caption">
+                            <h3>Our First Meeting</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800" alt="Couple Photo 2">
+                        <div class="carousel-caption">
+                            <h3>Engagement Day</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=800" alt="Couple Photo 3">
+                        <div class="carousel-caption">
+                            <h3>Beach Vacation</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1623546331905-f4d65a2bd0b2?w=800" alt="Couple Photo 4">
+                        <div class="carousel-caption">
+                            <h3>Sunset Moments</h3>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">❮</button>
+                <button class="carousel-nav carousel-next">❯</button>
+                <div class="carousel-indicators">
+                    <div class="carousel-indicator active"></div>
+                    <div class="carousel-indicator"></div>
+                    <div class="carousel-indicator"></div>
+                    <div class="carousel-indicator"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="download-section">
+        <div class="container">
+            <h2 class="section-title" style="color: #8b5f8a; margin-bottom: 30px;">SAVE OUR INVITATION</h2>
+            <p style="font-size: 20px; color: #5a4a4a; margin-bottom: 40px;">
+                Download our wedding invitation to keep as a memory
+            </p>
+            <button class="download-button" id="downloadBtn">
+                <i class="fas fa-download"></i> DOWNLOAD INVITATION
+            </button>
+        </div>
+    </div>
+
+    <footer>
+        <p>With love, Sajina & Arjun</p>
+        <p style="margin-top: 10px; font-size: 14px; opacity: 0.8;">We can't wait to celebrate with you!</p>
+    </footer>
+
+    <!-- Hidden invitation card for download -->
+    <div id="invitation-card" style="display: none; width: 600px; height: 400px; background: linear-gradient(135deg, #f9e4e4 0%, #f5e8f0 100%); padding: 40px; text-align: center; font-family: 'Cinzel', serif; color: #8b5f8a; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\" viewBox=\"0 0 100 100\"><path fill=\"%238b5f8a\" fill-opacity=\"0.05\" d=\"M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z\"/></svg>');"></div>
+        <div style="font-size: 80px; margin-bottom: 20px;">💕</div>
+        <h1 style="font-size: 36px; margin-bottom: 20px; letter-spacing: 4px;">WEDDING INVITATION</h1>
+        <div style="width: 200px; height: 2px; background: linear-gradient(90deg, #c97b84, #8b5f8a); margin: 20px auto;"></div>
+        <div style="font-size: 42px; font-weight: bold; margin: 20px 0; background: linear-gradient(45deg, #c97b84, #8b5f8a); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">SAJINA & ARJUN</div>
+        <div style="width: 200px; height: 2px; background: linear-gradient(90deg, #c97b84, #8b5f8a); margin: 20px auto;"></div>
+        <p style="font-size: 24px; margin: 20px 0;">NOVEMBER 3, 2025</p>
+        <p style="font-size: 18px; margin-top: 30px;">Kangarappadi Temple | 10:00 AM</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        // Countdown timer
+        function updateCountdown() {
+            const weddingDate = new Date('November 3, 2025 10:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').innerText = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Carousel functionality
+        const carousel = document.querySelector('.carousel');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const prevBtn = document.querySelector('.carousel-prev');
+        const nextBtn = document.querySelector('.carousel-next');
+        const indicators = document.querySelectorAll('.carousel-indicator');
+        let currentSlide = 0;
+        const slideCount = slides.length;
+
+        function goToSlide(slideIndex) {
+            if (slideIndex < 0) slideIndex = slideCount - 1;
+            if (slideIndex >= slideCount) slideIndex = 0;
+            
+            carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
+            currentSlide = slideIndex;
+            
+            // Update indicators
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+        nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+
+        // Add click events to indicators
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => goToSlide(index));
+        });
+
+        // Auto advance carousel
+        setInterval(() => goToSlide(currentSlide + 1), 5000);
+
+        // Download invitation functionality
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            const invitationCard = document.getElementById('invitation-card');
+            
+            html2canvas(invitationCard).then(canvas => {
+                const link = document.createElement('a');
+                link.download = 'Sajina-Arjun-Wedding-Invitation.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+                
+                // Add festive effects after download
+                createConfetti();
+                createBalloons();
+            });
+        });
+
+        // Festive effects
+        function createBalloons() {
+            const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#be2edd', '#6c5ce7'];
+            const sections = ['.hero-section', '.download-section'];
+            
+            sections.forEach(section => {
+                const sectionEl = document.querySelector(section);
+                for (let i = 0; i < 15; i++) {
+                    const balloon = document.createElement('div');
+                    balloon.className = 'balloon';
+                    balloon.style.left = `${Math.random() * 100}%`;
+                    balloon.style.animationDelay = `${Math.random() * 5}s`;
+                    balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    
+                    sectionEl.appendChild(balloon);
+                    
+                    // Remove balloon after animation
+                    setTimeout(() => {
+                        if (balloon.parentNode) {
+                            balloon.parentNode.removeChild(balloon);
+                        }
+                    }, 15000);
+                }
+            });
+        }
+
+        function createConfetti() {
+            const sections = ['.hero-section', '.download-section'];
+            const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#be2edd', '#6c5ce7'];
+            
+            sections.forEach(section => {
+                const sectionEl = document.querySelector(section);
+                for (let i = 0; i < 100; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = `${Math.random() * 100}%`;
+                    confetti.style.animationDelay = `${Math.random() * 5}s`;
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.width = `${Math.random() * 10 + 5}px`;
+                    confetti.style.height = `${Math.random() * 10 + 5}px`;
+                    confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                    
+                    sectionEl.appendChild(confetti);
+                    
+                    // Remove confetti after animation
+                    setTimeout(() => {
+                        if (confetti.parentNode) {
+                            confetti.parentNode.removeChild(confetti);
+                        }
+                    }, 5000);
+                }
+            });
+        }
+
+        // Add balloons on page load
+        window.addEventListener('load', () => {
+            createBalloons();
+        });
+
+        // Smooth scroll animation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroBg = document.querySelector('.hero-bg');
+            if (heroBg) {
+                heroBg.style.transform = `translateY(${scrolled * 0.5}px) scale(1.05)`;
+            }
+        });
+
+        // Intersection Observer for animation on scroll
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.detail-card, .location-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
