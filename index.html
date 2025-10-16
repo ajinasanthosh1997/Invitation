@@ -533,9 +533,9 @@
             transform: translateY(-5px);
         }
 
-        /* Carousel Styles */
+        /* Responsive Carousel Styles */
         .carousel-container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
             position: relative;
             overflow: hidden;
@@ -549,8 +549,8 @@
         }
 
         .carousel-slide {
-            min-width: 100%;
-            height: 500px;
+            flex: 0 0 100%;
+            height: 400px;
             position: relative;
         }
 
@@ -689,7 +689,8 @@
             letter-spacing: 1px;
         }
 
-        @media (max-width: 768px) {
+        /* Responsive Styles */
+        @media (max-width: 767px) {
             .hero-content h1 {
                 font-size: 48px;
             }
@@ -712,8 +713,24 @@
             .locations-container {
                 grid-template-columns: 1fr;
             }
+            
+            /* Mobile: 1 item */
             .carousel-slide {
-                height: 300px;
+                flex: 0 0 100%;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+            /* Tablet: 3 items */
+            .carousel-slide {
+                flex: 0 0 33.333%;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            /* Laptop: 5 items */
+            .carousel-slide {
+                flex: 0 0 20%;
             }
         }
     </style>
@@ -871,11 +888,18 @@
                             <h3>Sunset Moments</h3>
                         </div>
                     </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800" alt="Couple Photo 5">
+                        <div class="carousel-caption">
+                            <h3>City Adventures</h3>
+                        </div>
+                    </div>
                 </div>
                 <button class="carousel-nav carousel-prev">❮</button>
                 <button class="carousel-nav carousel-next">❯</button>
                 <div class="carousel-indicators">
                     <div class="carousel-indicator active"></div>
+                    <div class="carousel-indicator"></div>
                     <div class="carousel-indicator"></div>
                     <div class="carousel-indicator"></div>
                     <div class="carousel-indicator"></div>
