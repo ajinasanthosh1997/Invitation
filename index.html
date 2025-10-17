@@ -16,8 +16,8 @@
         body {
             font-family: 'Raleway', sans-serif;
             overflow-x: hidden;
-            background: #fdfbf7;
-            color: #2c2c2c;
+            background: #faf8ff;
+            color: #4a4452;
             line-height: 1.6;
         }
 
@@ -28,28 +28,32 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            background: linear-gradient(135deg, #e8d5c4 0%, #d4b5a0 50%, #c9a88a 100%);
         }
 
-        .hero-bg {
+        .hero-video {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover;
-            filter: brightness(0.7) sepia(0.2);
-            animation: gentleZoom 25s ease-in-out infinite alternate;
+            object-fit: cover;
+            z-index: 1;
+            filter: brightness(0.7) sepia(0.1); /* Removed hue-rotate */
         }
 
-        @keyframes gentleZoom {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.05); }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(230, 230, 250, 0.4) 0%, rgba(216, 191, 216, 0.5) 50%, rgba(183, 147, 218, 0.6) 100%);
+            z-index: 2;
         }
 
         .hero-content {
             position: relative;
-            z-index: 2;
+            z-index: 3;
             text-align: center;
             color: #fff;
             padding: 40px;
@@ -72,6 +76,7 @@
             margin-bottom: 20px;
             animation: floralPulse 3s ease-in-out infinite;
             filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+            color: #e6e6fa;
         }
 
         @keyframes floralPulse {
@@ -122,7 +127,7 @@
             transform: translate(-50%, -50%);
             color: rgba(255, 255, 255, 0.9);
             font-size: 20px;
-            background: #c9a88a;
+            background: #b793da;
             width: 35px;
             height: 35px;
             display: flex;
@@ -140,7 +145,7 @@
         }
 
         .details-section {
-            background: #fdfbf7;
+            background: #faf8ff;
             padding: 80px 20px;
             position: relative;
         }
@@ -162,13 +167,13 @@
         .detail-card {
             background: #fff;
             padding: 40px 30px;
-            border-radius: 0;
+            border-radius: 8px;
             text-align: center;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 20px rgba(183, 147, 218, 0.15);
             transform: translateY(0);
             transition: all 0.4s ease;
             animation: fadeIn 1s ease-out;
-            border: 1px solid #f0ebe5;
+            border: 1px solid #e6e6fa;
         }
 
         @keyframes fadeIn {
@@ -178,19 +183,19 @@
 
         .detail-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            box-shadow: 0 10px 30px rgba(183, 147, 218, 0.25);
         }
 
         .detail-icon {
             font-size: 40px;
             margin-bottom: 20px;
             display: inline-block;
-            color: #c9a88a;
+            color: #b793da;
         }
 
         .detail-card h3 {
             font-size: 24px;
-            color: #5a4a42;
+            color: #6a5a7a;
             margin-bottom: 15px;
             font-family: 'Cormorant Garamond', serif;
             font-weight: 600;
@@ -198,19 +203,19 @@
 
         .detail-card p {
             font-size: 16px;
-            color: #6a5a52;
+            color: #7a6a8a;
             line-height: 1.8;
         }
 
         .couple-photo-section {
             padding: 80px 20px;
-            background: #f7f3ee;
+            background: #f5f2ff;
         }
 
         .section-title {
             text-align: center;
             font-size: 38px;
-            color: #5a4a42;
+            color: #6a5a7a;
             margin-bottom: 60px;
             letter-spacing: 6px;
             animation: fadeInUp 1s ease-out;
@@ -225,7 +230,7 @@
             animation: floatFlower 15s ease-in-out infinite;
             pointer-events: none;
             font-size: 30px;
-            color: #d4b5a0;
+            color: #d8bfd8;
         }
 
         @keyframes floatFlower {
@@ -290,7 +295,7 @@
 
         .locations-section {
             padding: 80px 20px;
-            background: #fdfbf7;
+            background: #faf8ff;
         }
 
         .locations-container {
@@ -302,23 +307,23 @@
 
         .location-card {
             background: white;
-            border-radius: 0;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 20px rgba(183, 147, 218, 0.15);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
-            border: 1px solid #f0ebe5;
+            border: 1px solid #e6e6fa;
         }
 
         .location-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            box-shadow: 0 8px 30px rgba(183, 147, 218, 0.25);
         }
 
         .location-header {
             padding: 35px;
             text-align: center;
-            background: #e8d5c4;
-            color: #5a4a42;
+            background: #e6e6fa;
+            color: #6a5a7a;
         }
 
         .location-header h3 {
@@ -337,7 +342,7 @@
             font-size: 38px;
             margin-bottom: 15px;
             display: block;
-            color: #c9a88a;
+            color: #b793da;
         }
 
         .location-map {
@@ -355,12 +360,12 @@
             font-size: 15px;
             display: flex;
             align-items: center;
-            color: #6a5a52;
+            color: #7a6a8a;
         }
 
         .location-details i {
             margin-right: 10px;
-            color: #c9a88a;
+            color: #b793da;
             width: 20px;
         }
 
@@ -368,7 +373,7 @@
             display: inline-block;
             margin-top: 20px;
             padding: 12px 30px;
-            background: #c9a88a;
+            background: #b793da;
             color: white;
             text-decoration: none;
             border-radius: 50px;
@@ -379,14 +384,14 @@
         }
 
         .location-button:hover {
-            background: #b89878;
+            background: #a582c9;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(201,168,138,0.3);
+            box-shadow: 0 5px 15px rgba(183, 147, 218, 0.4);
         }
 
         .download-section {
             padding: 80px 20px;
-            background: #f7f3ee;
+            background: #f5f2ff;
             text-align: center;
         }
 
@@ -395,12 +400,12 @@
             padding: 18px 50px;
             font-size: 16px;
             color: white;
-            background: #c9a88a;
+            background: #b793da;
             border: none;
             border-radius: 50px;
             cursor: pointer;
             text-decoration: none;
-            box-shadow: 0 5px 20px rgba(201,168,138,0.3);
+            box-shadow: 0 5px 20px rgba(183, 147, 218, 0.3);
             transition: all 0.3s ease;
             font-family: 'Raleway', sans-serif;
             letter-spacing: 2px;
@@ -409,9 +414,9 @@
         }
 
         .download-button:hover {
-            background: #b89878;
+            background: #a582c9;
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(201,168,138,0.4);
+            box-shadow: 0 8px 25px rgba(183, 147, 218, 0.4);
         }
 
         .carousel-container {
@@ -419,7 +424,7 @@
             margin: 0 auto;
             position: relative;
             overflow: hidden;
-            border-radius: 0;
+            border-radius: 8px;
         }
 
         .carousel-track {
@@ -433,9 +438,9 @@
             height: 400px;
             margin: 0 15px;
             position: relative;
-            border-radius: 0;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(183, 147, 218, 0.15);
             flex-shrink: 0;
         }
 
@@ -444,12 +449,12 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
-            filter: sepia(0.1);
+            filter: sepia(0.1); /* Removed hue-rotate */
         }
 
         .carousel-slide:hover img {
             transform: scale(1.05);
-            filter: sepia(0);
+            filter: sepia(0); /* Removed hue-rotate */
         }
 
         .carousel-caption {
@@ -457,7 +462,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(90,74,66,0.9));
+            background: linear-gradient(transparent, rgba(106, 90, 122, 0.9));
             color: white;
             padding: 20px;
             text-align: center;
@@ -481,7 +486,7 @@
             position: absolute;
             width: 15px;
             height: 15px;
-            background: radial-gradient(circle, #e8d5c4, #d4b5a0);
+            background: radial-gradient(circle, #e6e6fa, #d8bfd8);
             border-radius: 50% 0 50% 0;
             opacity: 0;
             animation: petalFall 12s ease-in-out infinite;
@@ -504,7 +509,7 @@
         .heart-particle {
             position: absolute;
             font-size: 20px;
-            color: #d4b5a0;
+            color: #d8bfd8;
             opacity: 0;
             animation: heartFloat 10s ease-in-out infinite;
             pointer-events: none;
@@ -528,8 +533,8 @@
         }
 
         footer {
-            background: #5a4a42;
-            color: #f7f3ee;
+            background: #6a5a7a;
+            color: #f5f2ff;
             text-align: center;
             padding: 30px 20px;
             font-size: 15px;
@@ -538,7 +543,7 @@
 
         .timeline-section {
             padding: 80px 20px;
-            background: #f7f3ee;
+            background: #f5f2ff;
         }
 
         .timeline {
@@ -554,7 +559,7 @@
             top: 0;
             bottom: 0;
             width: 1px;
-            background: #d4b5a0;
+            background: #d8bfd8;
             transform: translateX(-50%);
         }
 
@@ -571,11 +576,11 @@
         .timeline-content {
             background: white;
             padding: 25px;
-            border-radius: 0;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(183, 147, 218, 0.15);
             width: 45%;
             position: relative;
-            border: 1px solid #f0ebe5;
+            border: 1px solid #e6e6fa;
         }
 
         .timeline-item:nth-child(odd) .timeline-content {
@@ -584,13 +589,13 @@
 
         .timeline-content h3 {
             font-family: 'Cormorant Garamond', serif;
-            color: #5a4a42;
+            color: #6a5a7a;
             margin-bottom: 10px;
             font-size: 22px;
         }
 
         .timeline-content p {
-            color: #6a5a52;
+            color: #7a6a8a;
             font-size: 15px;
             line-height: 1.6;
         }
@@ -601,11 +606,11 @@
             top: 20px;
             width: 16px;
             height: 16px;
-            background: #c9a88a;
+            background: #b793da;
             border-radius: 50%;
             transform: translateX(-50%);
             z-index: 2;
-            border: 3px solid #fdfbf7;
+            border: 3px solid #faf8ff;
         }
 
         /* Balloon Styles */
@@ -631,11 +636,11 @@
             background: rgba(255,255,255,0.5);
         }
 
-        .balloon-1 { background: radial-gradient(circle at 30% 30%, #e8b4b8, #d282a6); }
-        .balloon-2 { background: radial-gradient(circle at 30% 30%, #a0e7e5, #6cc2c0); }
-        .balloon-3 { background: radial-gradient(circle at 30% 30%, #b4e0a8, #8bc881); }
-        .balloon-4 { background: radial-gradient(circle at 30% 30%, #f9e79f, #f7dc6f); }
-        .balloon-5 { background: radial-gradient(circle at 30% 30%, #d7bde2, #bb8fce); }
+        .balloon-1 { background: radial-gradient(circle at 30% 30%, #e6e6fa, #d8bfd8); }
+        .balloon-2 { background: radial-gradient(circle at 30% 30%, #b793da, #9370db); }
+        .balloon-3 { background: radial-gradient(circle at 30% 30%, #d8bfd8, #b19cd9); }
+        .balloon-4 { background: radial-gradient(circle at 30% 30%, #e6e6fa, #b793da); }
+        .balloon-5 { background: radial-gradient(circle at 30% 30%, #d8bfd8, #9370db); }
 
         @keyframes balloonFloat {
             0% {
@@ -676,8 +681,8 @@
             height: 30px;
             border-radius: 50%;
             background: transparent;
-            border: 2px solid #d4b5a0;
-            box-shadow: 0 0 10px rgba(212, 181, 160, 0.5);
+            border: 2px solid #d8bfd8;
+            box-shadow: 0 0 10px rgba(216, 191, 216, 0.5);
         }
 
         .wedding-ring::after {
@@ -690,25 +695,25 @@
             height: 15px;
             border-radius: 50%;
             background: transparent;
-            border: 2px solid #c9a88a;
+            border: 2px solid #b793da;
         }
 
         .wedding-ring-2::before {
-            border-color: #a0e7e5;
-            box-shadow: 0 0 10px rgba(160, 231, 229, 0.5);
+            border-color: #e6e6fa;
+            box-shadow: 0 0 10px rgba(230, 230, 250, 0.5);
         }
 
         .wedding-ring-2::after {
-            border-color: #6cc2c0;
+            border-color: #d8bfd8;
         }
 
         .wedding-ring-3::before {
-            border-color: #e8b4b8;
-            box-shadow: 0 0 10px rgba(232, 180, 184, 0.5);
+            border-color: #b793da;
+            box-shadow: 0 0 10px rgba(183, 147, 218, 0.5);
         }
 
         .wedding-ring-3::after {
-            border-color: #d282a6;
+            border-color: #9370db;
         }
 
         @keyframes ringFloat {
@@ -793,6 +798,11 @@
             .timeline-marker {
                 left: 20px;
             }
+            
+            /* Adjust video for mobile */
+            .hero-video {
+                height: 100%;
+            }
         }
 
         @media (min-width: 768px) and (max-width: 1023px) {
@@ -814,7 +824,13 @@
 </head>
 <body>
     <div class="hero-section">
-        <div class="hero-bg"></div>
+        <!-- Video Background -->
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="assets/videos/VN20250531_201742.mp4" type="video/mp4">
+            <!-- Fallback image in case video doesn't load -->
+            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Fallback background" style="width: 100%; height: 100%; object-fit: cover;">
+        </video>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
             <div class="ornament">✿</div>
             <h1>We're Getting Married</h1>
@@ -1056,8 +1072,8 @@
 
     <div class="download-section">
         <div class="container">
-            <h2 class="section-title" style="color: #5a4a42; margin-bottom: 30px;">Save Our Invitation</h2>
-            <p style="font-size: 18px; color: #6a5a52; margin-bottom: 40px; font-family: 'Cormorant Garamond', serif;">
+            <h2 class="section-title" style="color: #6a5a7a; margin-bottom: 30px;">Save Our Invitation</h2>
+            <p style="font-size: 18px; color: #7a6a8a; margin-bottom: 40px; font-family: 'Cormorant Garamond', serif;">
                 Download our wedding invitation to keep as a memory
             </p>
             <button class="download-button" id="downloadBtn">
@@ -1066,23 +1082,23 @@
         </div>
     </div>
 
-    <footer>
+    <footer style="overflow-x: hidden;">
         <p style="font-family: 'Tangerine', cursive; font-size: 28px;">Arjun & Sajina</p>
         <p style="margin-top: 10px; font-size: 14px; opacity: 0.8;">We can't wait to celebrate with you!</p>
     </footer>
 
-    <div id="invitation-card" style="display: none; width: 600px; height: 400px; background: #fdfbf7; padding: 40px; text-align: center; font-family: 'Cormorant Garamond', serif; color: #5a4a42; position: relative; overflow: hidden; border: 8px solid #e8d5c4;">
-        <div style="font-size: 60px; margin-bottom: 20px; color: #c9a88a;">✿</div>
+    <div id="invitation-card" style="display: none; width: 600px; height: 400px; background: #faf8ff; padding: 40px; text-align: center; font-family: 'Cormorant Garamond', serif; color: #6a5a7a; position: relative; overflow: hidden; border: 8px solid #e6e6fa;">
+        <div style="font-size: 60px; margin-bottom: 20px; color: #b793da;">✿</div>
         <h1 style="font-size: 32px; margin-bottom: 20px; letter-spacing: 4px; text-transform: uppercase; font-weight: 400;">Wedding Invitation</h1>
-        <div style="width: 150px; height: 1px; background: #d4b5a0; margin: 20px auto; position: relative;">
-            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 25px; height: 25px; background: #fdfbf7; border: 2px solid #d4b5a0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #c9a88a;">✿</div>
+        <div style="width: 150px; height: 1px; background: #d8bfd8; margin: 20px auto; position: relative;">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 25px; height: 25px; background: #faf8ff; border: 2px solid #d8bfd8; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #b793da;">✿</div>
         </div>
-        <div style="font-size: 48px; font-weight: 400; margin: 25px 0; font-family: 'Tangerine', cursive; color: #5a4a42;">Arjun & Sajina</div>
-        <div style="width: 150px; height: 1px; background: #d4b5a0; margin: 20px auto; position: relative;">
-            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 25px; height: 25px; background: #fdfbf7; border: 2px solid #d4b5a0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #c9a88a;">✿</div>
+        <div style="font-size: 48px; font-weight: 400; margin: 25px 0; font-family: 'Tangerine', cursive; color: #6a5a7a;">Arjun & Sajina</div>
+        <div style="width: 150px; height: 1px; background: #d8bfd8; margin: 20px auto; position: relative;">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 25px; height: 25px; background: #faf8ff; border: 2px solid #d8bfd8; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #b793da;">✿</div>
         </div>
         <p style="font-size: 20px; margin: 20px 0; letter-spacing: 2px;">November 3, 2025</p>
-        <p style="font-size: 16px; margin-top: 30px; color: #6a5a52;">Sree Subramanya Bhadrakali Temple | 10:00 AM</p>
+        <p style="font-size: 16px; margin-top: 30px; color: #7a6a8a;">Sree Subramanya Bhadrakali Temple | 10:00 AM</p>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -1257,14 +1273,6 @@
                     target.scrollIntoView({ behavior: 'smooth' });
                 }
             });
-        });
-
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const heroBg = document.querySelector('.hero-bg');
-            if (heroBg) {
-                heroBg.style.transform = `translateY(${scrolled * 0.5}px) scale(1.05)`;
-            }
         });
 
         const observerOptions = {
