@@ -608,6 +608,126 @@
             border: 3px solid #fdfbf7;
         }
 
+        /* Balloon Styles */
+        .balloon {
+            position: absolute;
+            width: 30px;
+            height: 40px;
+            border-radius: 50%;
+            opacity: 0;
+            animation: balloonFloat 15s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .balloon::before {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 15px;
+            background: rgba(255,255,255,0.5);
+        }
+
+        .balloon-1 { background: radial-gradient(circle at 30% 30%, #e8b4b8, #d282a6); }
+        .balloon-2 { background: radial-gradient(circle at 30% 30%, #a0e7e5, #6cc2c0); }
+        .balloon-3 { background: radial-gradient(circle at 30% 30%, #b4e0a8, #8bc881); }
+        .balloon-4 { background: radial-gradient(circle at 30% 30%, #f9e79f, #f7dc6f); }
+        .balloon-5 { background: radial-gradient(circle at 30% 30%, #d7bde2, #bb8fce); }
+
+        @keyframes balloonFloat {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 0.8; }
+            50% { 
+                transform: translateY(50vh) translateX(20px) rotate(180deg);
+                opacity: 0.6;
+            }
+            90% { opacity: 0.3; }
+            100% {
+                transform: translateY(-100px) translateX(40px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Wedding Ring Styles */
+        .wedding-ring {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            opacity: 0;
+            animation: ringFloat 12s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .wedding-ring::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: transparent;
+            border: 2px solid #d4b5a0;
+            box-shadow: 0 0 10px rgba(212, 181, 160, 0.5);
+        }
+
+        .wedding-ring::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: transparent;
+            border: 2px solid #c9a88a;
+        }
+
+        .wedding-ring-2::before {
+            border-color: #a0e7e5;
+            box-shadow: 0 0 10px rgba(160, 231, 229, 0.5);
+        }
+
+        .wedding-ring-2::after {
+            border-color: #6cc2c0;
+        }
+
+        .wedding-ring-3::before {
+            border-color: #e8b4b8;
+            box-shadow: 0 0 10px rgba(232, 180, 184, 0.5);
+        }
+
+        .wedding-ring-3::after {
+            border-color: #d282a6;
+        }
+
+        @keyframes ringFloat {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 0.7; }
+            50% { 
+                transform: translateY(50vh) translateX(-30px) rotate(180deg);
+                opacity: 0.5;
+            }
+            90% { opacity: 0.2; }
+            100% {
+                transform: translateY(-100px) translateX(-60px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
         @media (max-width: 1200px) {
             .locations-container {
                 grid-template-columns: repeat(2, 1fr);
@@ -1070,13 +1190,63 @@
             });
         }
 
+        function createBalloons() {
+            const sections = document.querySelectorAll('.hero-section, .download-section, .couple-photo-section');
+            
+            sections.forEach(section => {
+                for (let i = 0; i < 10; i++) {
+                    const balloon = document.createElement('div');
+                    balloon.className = `balloon balloon-${Math.floor(Math.random() * 5) + 1}`;
+                    balloon.style.left = `${Math.random() * 100}%`;
+                    balloon.style.animationDelay = `${Math.random() * 10}s`;
+                    balloon.style.width = `${Math.random() * 10 + 25}px`;
+                    balloon.style.height = `${Math.random() * 10 + 35}px`;
+                    
+                    section.appendChild(balloon);
+                    
+                    setTimeout(() => {
+                        if (balloon.parentNode) {
+                            balloon.parentNode.removeChild(balloon);
+                        }
+                    }, 15000);
+                }
+            });
+        }
+
+        function createWeddingRings() {
+            const sections = document.querySelectorAll('.hero-section, .details-section');
+            
+            sections.forEach(section => {
+                for (let i = 0; i < 5; i++) {
+                    const ring = document.createElement('div');
+                    ring.className = `wedding-ring wedding-ring-${Math.floor(Math.random() * 3) + 1}`;
+                    ring.style.left = `${Math.random() * 100}%`;
+                    ring.style.animationDelay = `${Math.random() * 8}s`;
+                    ring.style.width = `${Math.random() * 10 + 35}px`;
+                    ring.style.height = `${Math.random() * 10 + 35}px`;
+                    
+                    section.appendChild(ring);
+                    
+                    setTimeout(() => {
+                        if (ring.parentNode) {
+                            ring.parentNode.removeChild(ring);
+                        }
+                    }, 12000);
+                }
+            });
+        }
+
         window.addEventListener('load', () => {
             createFloralEffects();
             createPetals();
             createHearts();
+            createBalloons();
+            createWeddingRings();
             
             setInterval(createPetals, 12000);
             setInterval(createHearts, 10000);
+            setInterval(createBalloons, 15000);
+            setInterval(createWeddingRings, 12000);
         });
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
