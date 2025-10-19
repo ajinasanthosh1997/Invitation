@@ -718,6 +718,68 @@
             }
         }
 
+        /* New Floating Hearts - Replacing Balloons */
+        .floating-heart {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            opacity: 0;
+            animation: heartFloat 15s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1;
+            /* Ensure hearts stay within viewport */
+            max-width: 100vw;
+            box-sizing: border-box;
+        }
+
+        .floating-heart::before,
+        .floating-heart::after {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            width: 15px;
+            height: 24px;
+            background: #f8f4e9;
+            border-radius: 15px 15px 0 0;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        .floating-heart::after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+        .floating-heart-1::before,
+        .floating-heart-1::after { background: #f8f4e9; }
+        .floating-heart-2::before,
+        .floating-heart-2::after { background: #566d40; }
+        .floating-heart-3::before,
+        .floating-heart-3::after { background: #e6e0d1; }
+        .floating-heart-4::before,
+        .floating-heart-4::after { background: #f8f4e9; }
+        .floating-heart-5::before,
+        .floating-heart-5::after { background: #e6e0d1; }
+
+        @keyframes heartFloat {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 0.8; }
+            50% { 
+                transform: translateY(50vh) translateX(20px) rotate(180deg);
+                opacity: 0.6;
+            }
+            90% { opacity: 0.3; }
+            100% {
+                transform: translateY(-100px) translateX(40px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
         footer {
             background: #3d3d2a;
             color: #f8f4e9;
@@ -797,55 +859,6 @@
             transform: translateX(-50%);
             z-index: 2;
             border: 3px solid #f8f4e9;
-        }
-
-        /* Balloon Styles - Fixed for mobile */
-        .balloon {
-            position: absolute;
-            width: 30px;
-            height: 40px;
-            border-radius: 50%;
-            opacity: 0;
-            animation: balloonFloat 15s ease-in-out infinite;
-            pointer-events: none;
-            z-index: 1;
-            /* Ensure balloons stay within viewport */
-            max-width: 100vw;
-            box-sizing: border-box;
-        }
-
-        .balloon::before {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 1px;
-            height: 15px;
-            background: rgba(255,255,255,0.5);
-        }
-
-        .balloon-1 { background: radial-gradient(circle at 30% 30%, #f8f4e9, #e6e0d1); }
-        .balloon-2 { background: radial-gradient(circle at 30% 30%, #566d40, #475c32); }
-        .balloon-3 { background: radial-gradient(circle at 30% 30%, #e6e0d1, #a6b595); }
-        .balloon-4 { background: radial-gradient(circle at 30% 30%, #f8f4e9, #566d40); }
-        .balloon-5 { background: radial-gradient(circle at 30% 30%, #e6e0d1, #475c32); }
-
-        @keyframes balloonFloat {
-            0% {
-                transform: translateY(100vh) translateX(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% { opacity: 0.8; }
-            50% { 
-                transform: translateY(50vh) translateX(20px) rotate(180deg);
-                opacity: 0.6;
-            }
-            90% { opacity: 0.3; }
-            100% {
-                transform: translateY(-100px) translateX(40px) rotate(360deg);
-                opacity: 0;
-            }
         }
 
         /* Wedding Ring Styles */
@@ -1027,17 +1040,17 @@
                 padding: 6px 12px;
             }
             
-            /* Fix balloon overflow on mobile */
-            .balloon {
+            /* Fix heart overflow on mobile */
+            .floating-heart {
                 /* Limit horizontal movement on mobile */
-                animation: balloonFloatMobile 15s ease-in-out infinite;
-                /* Ensure balloons don't go outside viewport */
+                animation: heartFloatMobile 15s ease-in-out infinite;
+                /* Ensure hearts don't go outside viewport */
                 left: 10% !important;
                 right: 10% !important;
                 max-width: 80vw;
             }
             
-            @keyframes balloonFloatMobile {
+            @keyframes heartFloatMobile {
                 0% {
                     transform: translateY(100vh) translateX(0) rotate(0deg);
                     opacity: 0;
@@ -1691,25 +1704,26 @@
             });
         }
 
-        function createBalloons() {
+        // Create floating hearts instead of balloons
+        function createFloatingHearts() {
             const sections = document.querySelectorAll('.hero-section, .download-section, .couple-photo-section, .video-section, .content-video-section');
             
             sections.forEach(section => {
                 for (let i = 0; i < 10; i++) {
-                    const balloon = document.createElement('div');
-                    balloon.className = `balloon balloon-${Math.floor(Math.random() * 5) + 1}`;
+                    const heart = document.createElement('div');
+                    heart.className = `floating-heart floating-heart-${Math.floor(Math.random() * 5) + 1}`;
                     // Limit horizontal positioning to prevent overflow
                     const leftPosition = Math.random() * 80 + 10; // Between 10% and 90%
-                    balloon.style.left = `${leftPosition}%`;
-                    balloon.style.animationDelay = `${Math.random() * 10}s`;
-                    balloon.style.width = `${Math.random() * 10 + 25}px`;
-                    balloon.style.height = `${Math.random() * 10 + 35}px`;
+                    heart.style.left = `${leftPosition}%`;
+                    heart.style.animationDelay = `${Math.random() * 10}s`;
+                    heart.style.width = `${Math.random() * 10 + 25}px`;
+                    heart.style.height = `${Math.random() * 10 + 25}px`;
                     
-                    section.appendChild(balloon);
+                    section.appendChild(heart);
                     
                     setTimeout(() => {
-                        if (balloon.parentNode) {
-                            balloon.parentNode.removeChild(balloon);
+                        if (heart.parentNode) {
+                            heart.parentNode.removeChild(heart);
                         }
                     }, 15000);
                 }
@@ -1748,12 +1762,12 @@
             createFloralEffects();
             createPetals();
             createHearts();
-            createBalloons();
+            createFloatingHearts(); // Create floating hearts instead of balloons
             createWeddingRings();
             
             setInterval(createPetals, 12000);
             setInterval(createHearts, 10000);
-            setInterval(createBalloons, 15000);
+            setInterval(createFloatingHearts, 15000); // Create floating hearts instead of balloons
             setInterval(createWeddingRings, 12000);
         });
 
