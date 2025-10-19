@@ -326,6 +326,72 @@
             font-family: 'Cormorant Garamond', serif;
         }
 
+        /* Voice Controls Styles */
+        .voice-controls {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .voice-toggle {
+            background: rgba(86, 109, 64, 0.85);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            font-size: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .voice-toggle:hover {
+            background: rgba(86, 109, 64, 1);
+            transform: scale(1.1);
+        }
+
+        .voice-toggle.muted {
+            background: rgba(61, 61, 42, 0.85);
+        }
+
+        .voice-toggle.muted:hover {
+            background: rgba(61, 61, 42, 1);
+        }
+
+        .voice-indicator {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-size: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: none;
+            color: #3d3d2a;
+            font-weight: 500;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .voice-indicator.active {
+            display: block;
+            animation: fadeInOut 3s ease-in-out;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
         /* Rest of your CSS remains the same */
         .couple-photo-section {
             padding: 80px 20px;
@@ -944,6 +1010,23 @@
                 font-size: 16px;
             }
             
+            /* Voice controls adjustments for mobile */
+            .voice-controls {
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .voice-toggle {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+            
+            .voice-indicator {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+            
             /* Fix balloon overflow on mobile */
             .balloon {
                 /* Limit horizontal movement on mobile */
@@ -1167,6 +1250,13 @@
                     <!-- Fallback image in case video doesn't load -->
                     <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Love Story" style="width: 100%; height: auto;">
                 </video>
+                <!-- Voice Controls for first video -->
+                <div class="voice-controls">
+                    <button class="voice-toggle" id="voiceToggle1" title="Toggle Voice">
+                        <i class="fas fa-volume-mute"></i>
+                    </button>
+                    <div class="voice-indicator" id="voiceIndicator1">Voice On</div>
+                </div>
             </div>
             <div class="content-video-caption">
                 <h3>A Beautiful Journey</h3>
@@ -1261,6 +1351,13 @@
                     <!-- Fallback image in case video doesn't load -->
                     <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Special Moments" style="width: 100%; height: auto;">
                 </video>
+                <!-- Voice Controls for second video -->
+                <div class="voice-controls">
+                    <button class="voice-toggle" id="voiceToggle2" title="Toggle Voice">
+                        <i class="fas fa-volume-mute"></i>
+                    </button>
+                    <div class="voice-indicator" id="voiceIndicator2">Voice On</div>
+                </div>
             </div>
             <div class="content-video-caption">
                 <h3>Celebrating Our Bond</h3>
@@ -1444,6 +1541,65 @@
             });
         }
 
+        // Voice control functionality
+        function initializeVoiceControls() {
+            // Voice for first content video (Our Love Story)
+            const video1 = document.querySelector('#content-video-1 .content-video');
+            const voiceToggle1 = document.getElementById('voiceToggle1');
+            const voiceIndicator1 = document.getElementById('voiceIndicator1');
+            
+            // Voice for second content video (Our Special Moments)
+            const video2 = document.querySelector('#content-video-2 .content-video');
+            const voiceToggle2 = document.getElementById('voiceToggle2');
+            const voiceIndicator2 = document.getElementById('voiceIndicator2');
+            
+            // Initialize both videos as muted
+            video1.muted = true;
+            video2.muted = true;
+            
+            // Function to toggle voice for a video
+            function toggleVoice(video, toggleBtn, indicator) {
+                video.muted = !video.muted;
+                
+                if (video.muted) {
+                    toggleBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                    toggleBtn.classList.add('muted');
+                    indicator.textContent = 'Voice Off';
+                } else {
+                    toggleBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                    toggleBtn.classList.remove('muted');
+                    indicator.textContent = 'Voice On';
+                    
+                    // Show indicator and hide after 3 seconds
+                    indicator.classList.add('active');
+                    setTimeout(() => {
+                        indicator.classList.remove('active');
+                    }, 3000);
+                }
+            }
+            
+            // Add event listeners for voice toggles
+            voiceToggle1.addEventListener('click', () => {
+                toggleVoice(video1, voiceToggle1, voiceIndicator1);
+            });
+            
+            voiceToggle2.addEventListener('click', () => {
+                toggleVoice(video2, voiceToggle2, voiceIndicator2);
+            });
+            
+            // Auto-unmute when video starts playing (if user interacts first)
+            function handleVideoPlay(video, toggleBtn, indicator) {
+                // If video is playing and muted, show muted state
+                if (video.muted) {
+                    toggleBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                    toggleBtn.classList.add('muted');
+                }
+            }
+            
+            video1.addEventListener('play', () => handleVideoPlay(video1, voiceToggle1, voiceIndicator1));
+            video2.addEventListener('play', () => handleVideoPlay(video2, voiceToggle2, voiceIndicator2));
+        }
+
         // Rest of your JavaScript remains the same
         document.getElementById('downloadBtn').addEventListener('click', function() {
             const invitationCard = document.getElementById('invitation-card');
@@ -1588,6 +1744,7 @@
         window.addEventListener('load', () => {
             handleVideoPlayback(); // Initialize video scroll play for background videos
             handleContentVideoPlayback(); // Initialize video scroll play for content videos
+            initializeVoiceControls(); // Initialize voice controls
             createFloralEffects();
             createPetals();
             createHearts();
