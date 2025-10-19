@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arjun & Sajina | Wedding Invitation</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Raleway:wght@300;400;500&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -30,6 +31,7 @@
             overflow: hidden;
         }
 
+        /* Hero Video Background - Always playing */
         .hero-video {
             position: absolute;
             top: 0;
@@ -207,6 +209,124 @@
             line-height: 1.8;
         }
 
+        /* Video sections - Scroll triggered */
+        .video-section {
+            position: relative;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .landscape-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            filter: brightness(0.8) sepia(0.2);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(248, 244, 233, 0.4) 0%, rgba(214, 204, 179, 0.6) 50%, rgba(86, 109, 64, 0.5) 100%);
+            z-index: 2;
+        }
+
+        .video-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: #2c3e1a;
+            padding: 40px;
+            max-width: 800px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+
+        .video-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .video-content h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .video-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* New Content Video Sections */
+        .content-video-section {
+            padding: 80px 20px;
+            background: #f1ebdb;
+            text-align: center;
+        }
+
+        .content-video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(86, 109, 64, 0.2);
+            position: relative;
+        }
+
+        .content-video {
+            width: 100%;
+            height: auto;
+            display: block;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 1s ease;
+        }
+
+        .content-video.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .content-video-caption {
+            padding: 30px;
+            background: #fffcf5;
+            text-align: center;
+        }
+
+        .content-video-caption h3 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-family: 'Cormorant Garamond', serif;
+            color: #3d3d2a;
+            font-weight: 600;
+        }
+
+        .content-video-caption p {
+            font-size: 18px;
+            color: #5a5a42;
+            line-height: 1.7;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Rest of your CSS remains the same */
         .couple-photo-section {
             padding: 80px 20px;
             background: #f1ebdb;
@@ -805,9 +925,23 @@
                 left: 20px;
             }
             
-            /* Adjust video for mobile */
-            .hero-video {
-                height: 100%;
+            /* Video content adjustments for mobile */
+            .video-content h2 {
+                font-size: 32px;
+                letter-spacing: 2px;
+            }
+            
+            .video-content p {
+                font-size: 16px;
+            }
+            
+            /* Content video adjustments for mobile */
+            .content-video-caption h3 {
+                font-size: 26px;
+            }
+            
+            .content-video-caption p {
+                font-size: 16px;
             }
             
             /* Fix balloon overflow on mobile */
@@ -893,7 +1027,7 @@
 </head>
 <body>
     <div class="hero-section">
-        <!-- Video Background -->
+        <!-- Video Background - Always playing -->
         <video class="hero-video" autoplay muted loop playsinline>
             <source src="assets/videos/Beach Reel.mp4" type="video/mp4">
             <!-- Fallback image in case video doesn't load -->
@@ -961,6 +1095,21 @@
         </div>
     </div>
 
+    <!-- First Landscape Video Section - Scroll triggered -->
+    <div class="video-section" id="video-section-1">
+        <video class="landscape-video" muted playsinline>
+            <source src="assets/videos/Sajna Save The Date.mp4" type="video/mp4">
+            <!-- Fallback image in case video doesn't load -->
+            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Fallback background" style="width: 100%; height: 100%; object-fit: cover;">
+        </video>
+        <div class="video-overlay"></div>
+        <div class="video-content">
+            <h2>Our Journey Together</h2>
+            <p>From our first meeting to this beautiful moment, our journey has been filled with love, laughter, and countless precious memories. We're excited to begin this new chapter of our lives together.</p>
+            <div class="divider"></div>
+        </div>
+    </div>
+
     <div class="timeline-section">
         <div class="container">
             <h2 class="section-title">Wedding Day Schedule</h2>
@@ -989,6 +1138,39 @@
                         <p>Celebration continues with dinner and festivities at M N Rajappan Memorial Sreenarayana Auditorium</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Landscape Video Section - Scroll triggered -->
+    <div class="video-section" id="video-section-2">
+        <video class="landscape-video" muted playsinline>
+            <source src="assets/videos/SAJNA SAVE THE DATE..mp4" type="video/mp4">
+            <!-- Fallback image in case video doesn't load -->
+            <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Fallback background" style="width: 100%; height: 100%; object-fit: cover;">
+        </video>
+        <div class="video-overlay"></div>
+        <div class="video-content">
+            <h2>Celebrating With You</h2>
+            <p>We are thrilled to share this special day with our closest family and friends. Your presence is the most precious gift we could ask for as we celebrate the beginning of our married life together.</p>
+            <div class="divider"></div>
+        </div>
+    </div>
+
+    <!-- First Content Video Section - Not background -->
+    <div class="content-video-section" id="content-video-1">
+        <div class="container">
+            <h2 class="section-title">Our Love Story</h2>
+            <div class="content-video-container">
+                <video class="content-video" muted playsinline>
+                    <source src="assets/videos/SAJNA SAVE THE DATE..mp4" type="video/mp4">
+                    <!-- Fallback image in case video doesn't load -->
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Love Story" style="width: 100%; height: auto;">
+                </video>
+            </div>
+            <div class="content-video-caption">
+                <h3>A Beautiful Journey</h3>
+                <p>From our first date to this moment, every step has been magical. We cherish each memory and look forward to creating many more together.</p>
             </div>
         </div>
     </div>
@@ -1065,6 +1247,24 @@
                         </a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Content Video Section - Not background -->
+    <div class="content-video-section" id="content-video-2">
+        <div class="container">
+            <h2 class="section-title">Our Special Moments</h2>
+            <div class="content-video-container">
+                <video class="content-video" muted playsinline>
+                    <source src="assets/videos/Sajna Save The Date.mp4" type="video/mp4">
+                    <!-- Fallback image in case video doesn't load -->
+                    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Special Moments" style="width: 100%; height: auto;">
+                </video>
+            </div>
+            <div class="content-video-caption">
+                <h3>Celebrating Our Bond</h3>
+                <p>From quiet evenings to grand celebrations, every moment spent together has strengthened our bond and deepened our love for each other.</p>
             </div>
         </div>
     </div>
@@ -1191,6 +1391,60 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
+        // Video scroll play functionality - for background videos
+        function handleVideoPlayback() {
+            const videoSections = document.querySelectorAll('.video-section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const video = entry.target.querySelector('.landscape-video');
+                    const content = entry.target.querySelector('.video-content');
+                    
+                    if (entry.isIntersecting) {
+                        // When video section is in view
+                        video.style.opacity = '1';
+                        video.play().catch(e => console.log('Video play failed:', e));
+                        content.classList.add('visible');
+                    } else {
+                        // When video section is out of view
+                        video.style.opacity = '0';
+                        video.pause();
+                        content.classList.remove('visible');
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            videoSections.forEach(section => {
+                observer.observe(section);
+            });
+        }
+
+        // Content video scroll play functionality - for non-background videos
+        function handleContentVideoPlayback() {
+            const contentVideoSections = document.querySelectorAll('.content-video-section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const video = entry.target.querySelector('.content-video');
+                    
+                    if (entry.isIntersecting) {
+                        // When content video section is in view
+                        video.classList.add('visible');
+                        video.play().catch(e => console.log('Content video play failed:', e));
+                    } else {
+                        // When content video section is out of view
+                        video.classList.remove('visible');
+                        video.pause();
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            contentVideoSections.forEach(section => {
+                observer.observe(section);
+            });
+        }
+
+        // Rest of your JavaScript remains the same
         document.getElementById('downloadBtn').addEventListener('click', function() {
             const invitationCard = document.getElementById('invitation-card');
             
@@ -1206,7 +1460,7 @@
 
         function createFloralEffects() {
             const flowers = ['✿', '❀', '✾', '❁', '✽'];
-            const sections = document.querySelectorAll('.hero-section, .download-section');
+            const sections = document.querySelectorAll('.hero-section, .download-section, .video-section, .content-video-section');
             
             sections.forEach(section => {
                 for (let i = 0; i < 20; i++) {
@@ -1231,7 +1485,7 @@
         }
 
         function createPetals() {
-            const sections = document.querySelectorAll('.hero-section, .couple-photo-section');
+            const sections = document.querySelectorAll('.hero-section, .couple-photo-section, .video-section, .content-video-section');
             
             sections.forEach(section => {
                 for (let i = 0; i < 15; i++) {
@@ -1257,7 +1511,7 @@
 
         function createHearts() {
             const hearts = ['♥', '♡'];
-            const sections = document.querySelectorAll('.details-section, .timeline-section');
+            const sections = document.querySelectorAll('.details-section, .timeline-section, .video-section, .content-video-section');
             
             sections.forEach(section => {
                 for (let i = 0; i < 8; i++) {
@@ -1282,7 +1536,7 @@
         }
 
         function createBalloons() {
-            const sections = document.querySelectorAll('.hero-section, .download-section, .couple-photo-section');
+            const sections = document.querySelectorAll('.hero-section, .download-section, .couple-photo-section, .video-section, .content-video-section');
             
             sections.forEach(section => {
                 for (let i = 0; i < 10; i++) {
@@ -1307,7 +1561,7 @@
         }
 
         function createWeddingRings() {
-            const sections = document.querySelectorAll('.hero-section, .details-section');
+            const sections = document.querySelectorAll('.hero-section, .details-section, .video-section, .content-video-section');
             
             sections.forEach(section => {
                 for (let i = 0; i < 5; i++) {
@@ -1332,6 +1586,8 @@
         }
 
         window.addEventListener('load', () => {
+            handleVideoPlayback(); // Initialize video scroll play for background videos
+            handleContentVideoPlayback(); // Initialize video scroll play for content videos
             createFloralEffects();
             createPetals();
             createHearts();

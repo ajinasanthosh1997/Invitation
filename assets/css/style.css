@@ -1,0 +1,205 @@
+/* --- Color Palette --- */
+:root {
+    --color-primary: #566d40; /* Darker Green (Ribbon/Leaves) */
+    --color-secondary: #a6b595; /* Lighter Green (Accents) */
+    --color-background: #f8f4e9; /* Light Beige/Cream */
+    --color-text-dark: #3d3d2a; /* Dark Text */
+    --color-accent-gold: #c6a77e; /* Mock Wax Seal/Gold Accent */
+}
+
+/* --- Base Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    background-color: var(--color-background);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Typography --- */
+h1, h2, h3 {
+    font-weight: 400;
+    color: var(--color-text-dark);
+}
+
+.ornament {
+    font-family: 'Tangerine', cursive;
+    font-size: 50px;
+    color: var(--color-secondary);
+    line-height: 0.5;
+}
+
+.section-title {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* --- 1. Hero Section (Main Invitation) --- */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 20px 40px;
+    text-align: center;
+    background: url('https://images.unsplash.com/photo-1547483606-d70725a07c1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1ODc1OTF8MHwxfHNlYXJjaHw3MHx8d2VkZGluZyUyMHBsYW50cyUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzAzNTc1OTczfDA&ixlib=rb-4.0.3&q=80&w=1080') no-repeat center center/cover; /* Replace with your desired subtle image or simply remove */
+    position: relative;
+}
+
+/* A subtle overlay for better text readability */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(248, 244, 233, 0.75); /* Semi-transparent beige */
+    z-index: 0;
+}
+
+.hero-card {
+    background-color: var(--color-background);
+    padding: 50px 30px;
+    border: 3px solid var(--color-secondary);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    max-width: 450px;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.announcement-text {
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.couple-names {
+    font-family: 'Tangerine', cursive;
+    font-size: 80px;
+    color: var(--color-text-dark);
+    margin: 20px 0;
+    line-height: 1;
+}
+
+.date-location p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+/* Ribbon Effect */
+.rsvp-ribbon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(50%); /* Hangs slightly off the bottom */
+}
+
+.ribbon-text {
+    color: var(--color-background);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.hero-details {
+    margin-top: 50px; /* Space from the card (due to ribbon) */
+    padding-top: 20px;
+    font-size: 18px;
+    z-index: 1;
+}
+
+/* --- 2. Details Section (Schedule) --- */
+.details-section {
+    padding: 100px 20px 80px;
+    text-align: center;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.detail-card {
+    background-color: #ffffff;
+    border: 1px solid #e6e0d1;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+}
+
+.detail-card i {
+    font-size: 35px;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+.detail-card h3 {
+    font-size: 26px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+.detail-card p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.location-name {
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-top: 10px !important;
+}
+
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #e6e0d1;
+    color: var(--color-text-dark);
+}
+
+footer p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* --- Responsiveness for Smaller Screens --- */
+@media (max-width: 600px) {
+    .section-title {
+        font-size: 36px;
+    }
+
+    .hero-card {
+        padding: 40px 20px;
+    }
+    
+    .couple-names {
+        font-size: 60px;
+    }
+}
