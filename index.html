@@ -16,8 +16,8 @@
         body {
             font-family: 'Raleway', sans-serif;
             overflow-x: hidden;
-            background: #faf8ff;
-            color: #4a4452;
+            background: #f8f4e9;
+            color: #3d3d2a;
             line-height: 1.6;
         }
 
@@ -38,7 +38,7 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
-            filter: brightness(0.7) sepia(0.1); /* Removed hue-rotate */
+            filter: brightness(0.8) sepia(0.2);
         }
 
         .hero-overlay {
@@ -47,7 +47,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(230, 230, 250, 0.4) 0%, rgba(216, 191, 216, 0.5) 50%, rgba(183, 147, 218, 0.6) 100%);
+            background: linear-gradient(135deg, rgba(248, 244, 233, 0.3) 0%, rgba(214, 204, 179, 0.5) 50%, rgba(86, 109, 64, 0.4) 100%);
             z-index: 2;
         }
 
@@ -55,7 +55,7 @@
             position: relative;
             z-index: 3;
             text-align: center;
-            color: #fff;
+            color: #2c3e1a;
             padding: 40px;
             animation: fadeInUp 1.5s ease-out;
         }
@@ -75,8 +75,8 @@
             font-size: 60px;
             margin-bottom: 20px;
             animation: floralPulse 3s ease-in-out infinite;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
-            color: #e6e6fa;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+            color: #566d40;
         }
 
         @keyframes floralPulse {
@@ -89,7 +89,7 @@
             font-weight: 300;
             letter-spacing: 8px;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.1);
             font-family: 'Raleway', sans-serif;
             text-transform: uppercase;
         }
@@ -98,11 +98,11 @@
             font-size: 72px;
             font-weight: 400;
             margin: 30px 0;
-            color: #fff;
+            color: #2c3e1a;
             font-family: 'Tangerine', cursive;
             position: relative;
             padding: 10px 0;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.1);
             animation: nameFloat 4s ease-in-out infinite;
         }
 
@@ -114,7 +114,7 @@
         .divider {
             width: 150px;
             height: 1px;
-            background: rgba(255,255,255,0.5);
+            background: rgba(86, 109, 64, 0.5);
             margin: 30px auto;
             position: relative;
         }
@@ -127,7 +127,7 @@
             transform: translate(-50%, -50%);
             color: rgba(255, 255, 255, 0.9);
             font-size: 20px;
-            background: #b793da;
+            background: #566d40;
             width: 35px;
             height: 35px;
             display: flex;
@@ -140,12 +140,12 @@
             font-size: 20px;
             letter-spacing: 3px;
             margin-top: 20px;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.1);
             font-family: 'Cormorant Garamond', serif;
         }
 
         .details-section {
-            background: #faf8ff;
+            background: #f8f4e9;
             padding: 80px 20px;
             position: relative;
         }
@@ -165,15 +165,15 @@
         }
 
         .detail-card {
-            background: #fff;
+            background: #fffcf5;
             padding: 40px 30px;
             border-radius: 8px;
             text-align: center;
-            box-shadow: 0 2px 20px rgba(183, 147, 218, 0.15);
+            box-shadow: 0 2px 20px rgba(86, 109, 64, 0.1);
             transform: translateY(0);
             transition: all 0.4s ease;
             animation: fadeIn 1s ease-out;
-            border: 1px solid #e6e6fa;
+            border: 1px solid #e6e0d1;
         }
 
         @keyframes fadeIn {
@@ -183,19 +183,19 @@
 
         .detail-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(183, 147, 218, 0.25);
+            box-shadow: 0 10px 30px rgba(86, 109, 64, 0.15);
         }
 
         .detail-icon {
             font-size: 40px;
             margin-bottom: 20px;
             display: inline-block;
-            color: #b793da;
+            color: #566d40;
         }
 
         .detail-card h3 {
             font-size: 24px;
-            color: #6a5a7a;
+            color: #3d3d2a;
             margin-bottom: 15px;
             font-family: 'Cormorant Garamond', serif;
             font-weight: 600;
@@ -203,19 +203,19 @@
 
         .detail-card p {
             font-size: 16px;
-            color: #7a6a8a;
+            color: #5a5a42;
             line-height: 1.8;
         }
 
         .couple-photo-section {
             padding: 80px 20px;
-            background: #f5f2ff;
+            background: #f1ebdb;
         }
 
         .section-title {
             text-align: center;
             font-size: 38px;
-            color: #6a5a7a;
+            color: #3d3d2a;
             margin-bottom: 60px;
             letter-spacing: 6px;
             animation: fadeInUp 1s ease-out;
@@ -230,7 +230,7 @@
             animation: floatFlower 15s ease-in-out infinite;
             pointer-events: none;
             font-size: 30px;
-            color: #d8bfd8;
+            color: #a6b595;
         }
 
         @keyframes floatFlower {
@@ -258,7 +258,7 @@
         .countdown-title {
             font-size: 20px;
             margin-bottom: 30px;
-            color: #fff;
+            color: #2c3e1a;
             font-family: 'Cormorant Garamond', serif;
             letter-spacing: 2px;
         }
@@ -270,24 +270,24 @@
         }
 
         .countdown-item {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.25);
             backdrop-filter: blur(10px);
             padding: 20px;
             border-radius: 8px;
             min-width: 90px;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(86, 109, 64, 0.2);
         }
 
         .countdown-number {
             font-size: 36px;
             font-weight: 300;
-            color: #fff;
+            color: #2c3e1a;
             font-family: 'Cormorant Garamond', serif;
         }
 
         .countdown-label {
             font-size: 12px;
-            color: rgba(255,255,255,0.9);
+            color: rgba(44, 62, 26, 0.9);
             margin-top: 5px;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -295,7 +295,7 @@
 
         .locations-section {
             padding: 80px 20px;
-            background: #faf8ff;
+            background: #f8f4e9;
         }
 
         .locations-container {
@@ -306,24 +306,24 @@
         }
 
         .location-card {
-            background: white;
+            background: #fffcf5;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(183, 147, 218, 0.15);
+            box-shadow: 0 4px 20px rgba(86, 109, 64, 0.1);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
-            border: 1px solid #e6e6fa;
+            border: 1px solid #e6e0d1;
         }
 
         .location-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 8px 30px rgba(183, 147, 218, 0.25);
+            box-shadow: 0 8px 30px rgba(86, 109, 64, 0.15);
         }
 
         .location-header {
             padding: 35px;
             text-align: center;
-            background: #e6e6fa;
-            color: #6a5a7a;
+            background: #e6e0d1;
+            color: #3d3d2a;
         }
 
         .location-header h3 {
@@ -342,7 +342,7 @@
             font-size: 38px;
             margin-bottom: 15px;
             display: block;
-            color: #b793da;
+            color: #566d40;
         }
 
         .location-map {
@@ -360,12 +360,12 @@
             font-size: 15px;
             display: flex;
             align-items: center;
-            color: #7a6a8a;
+            color: #5a5a42;
         }
 
         .location-details i {
             margin-right: 10px;
-            color: #b793da;
+            color: #566d40;
             width: 20px;
         }
 
@@ -373,7 +373,7 @@
             display: inline-block;
             margin-top: 20px;
             padding: 12px 30px;
-            background: #b793da;
+            background: #566d40;
             color: white;
             text-decoration: none;
             border-radius: 50px;
@@ -384,14 +384,14 @@
         }
 
         .location-button:hover {
-            background: #a582c9;
+            background: #475c32;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(183, 147, 218, 0.4);
+            box-shadow: 0 5px 15px rgba(86, 109, 64, 0.3);
         }
 
         .download-section {
             padding: 80px 20px;
-            background: #f5f2ff;
+            background: #f1ebdb;
             text-align: center;
         }
 
@@ -400,12 +400,12 @@
             padding: 18px 50px;
             font-size: 16px;
             color: white;
-            background: #b793da;
+            background: #566d40;
             border: none;
             border-radius: 50px;
             cursor: pointer;
             text-decoration: none;
-            box-shadow: 0 5px 20px rgba(183, 147, 218, 0.3);
+            box-shadow: 0 5px 20px rgba(86, 109, 64, 0.2);
             transition: all 0.3s ease;
             font-family: 'Raleway', sans-serif;
             letter-spacing: 2px;
@@ -414,9 +414,9 @@
         }
 
         .download-button:hover {
-            background: #a582c9;
+            background: #475c32;
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(183, 147, 218, 0.4);
+            box-shadow: 0 8px 25px rgba(86, 109, 64, 0.3);
         }
 
         .carousel-container {
@@ -440,7 +440,7 @@
             position: relative;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(183, 147, 218, 0.15);
+            box-shadow: 0 4px 15px rgba(86, 109, 64, 0.1);
             flex-shrink: 0;
         }
 
@@ -449,12 +449,12 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
-            filter: sepia(0.1); /* Removed hue-rotate */
+            filter: sepia(0.2);
         }
 
         .carousel-slide:hover img {
             transform: scale(1.05);
-            filter: sepia(0); /* Removed hue-rotate */
+            filter: sepia(0);
         }
 
         .carousel-caption {
@@ -462,7 +462,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(106, 90, 122, 0.9));
+            background: linear-gradient(transparent, rgba(61, 61, 42, 0.9));
             color: white;
             padding: 20px;
             text-align: center;
@@ -486,7 +486,7 @@
             position: absolute;
             width: 15px;
             height: 15px;
-            background: radial-gradient(circle, #e6e6fa, #d8bfd8);
+            background: radial-gradient(circle, #f8f4e9, #e6e0d1);
             border-radius: 50% 0 50% 0;
             opacity: 0;
             animation: petalFall 12s ease-in-out infinite;
@@ -509,7 +509,7 @@
         .heart-particle {
             position: absolute;
             font-size: 20px;
-            color: #d8bfd8;
+            color: #a6b595;
             opacity: 0;
             animation: heartFloat 10s ease-in-out infinite;
             pointer-events: none;
@@ -533,8 +533,8 @@
         }
 
         footer {
-            background: #6a5a7a;
-            color: #f5f2ff;
+            background: #3d3d2a;
+            color: #f8f4e9;
             text-align: center;
             padding: 30px 20px;
             font-size: 15px;
@@ -543,7 +543,7 @@
 
         .timeline-section {
             padding: 80px 20px;
-            background: #f5f2ff;
+            background: #f1ebdb;
         }
 
         .timeline {
@@ -559,7 +559,7 @@
             top: 0;
             bottom: 0;
             width: 1px;
-            background: #d8bfd8;
+            background: #a6b595;
             transform: translateX(-50%);
         }
 
@@ -574,13 +574,13 @@
         }
 
         .timeline-content {
-            background: white;
+            background: #fffcf5;
             padding: 25px;
             border-radius: 8px;
-            box-shadow: 0 2px 15px rgba(183, 147, 218, 0.15);
+            box-shadow: 0 2px 15px rgba(86, 109, 64, 0.1);
             width: 45%;
             position: relative;
-            border: 1px solid #e6e6fa;
+            border: 1px solid #e6e0d1;
         }
 
         .timeline-item:nth-child(odd) .timeline-content {
@@ -589,13 +589,13 @@
 
         .timeline-content h3 {
             font-family: 'Cormorant Garamond', serif;
-            color: #6a5a7a;
+            color: #3d3d2a;
             margin-bottom: 10px;
             font-size: 22px;
         }
 
         .timeline-content p {
-            color: #7a6a8a;
+            color: #5a5a42;
             font-size: 15px;
             line-height: 1.6;
         }
@@ -606,11 +606,11 @@
             top: 20px;
             width: 16px;
             height: 16px;
-            background: #b793da;
+            background: #566d40;
             border-radius: 50%;
             transform: translateX(-50%);
             z-index: 2;
-            border: 3px solid #faf8ff;
+            border: 3px solid #f8f4e9;
         }
 
         /* Balloon Styles */
@@ -636,11 +636,11 @@
             background: rgba(255,255,255,0.5);
         }
 
-        .balloon-1 { background: radial-gradient(circle at 30% 30%, #e6e6fa, #d8bfd8); }
-        .balloon-2 { background: radial-gradient(circle at 30% 30%, #b793da, #9370db); }
-        .balloon-3 { background: radial-gradient(circle at 30% 30%, #d8bfd8, #b19cd9); }
-        .balloon-4 { background: radial-gradient(circle at 30% 30%, #e6e6fa, #b793da); }
-        .balloon-5 { background: radial-gradient(circle at 30% 30%, #d8bfd8, #9370db); }
+        .balloon-1 { background: radial-gradient(circle at 30% 30%, #f8f4e9, #e6e0d1); }
+        .balloon-2 { background: radial-gradient(circle at 30% 30%, #566d40, #475c32); }
+        .balloon-3 { background: radial-gradient(circle at 30% 30%, #e6e0d1, #a6b595); }
+        .balloon-4 { background: radial-gradient(circle at 30% 30%, #f8f4e9, #566d40); }
+        .balloon-5 { background: radial-gradient(circle at 30% 30%, #e6e0d1, #475c32); }
 
         @keyframes balloonFloat {
             0% {
@@ -681,8 +681,8 @@
             height: 30px;
             border-radius: 50%;
             background: transparent;
-            border: 2px solid #d8bfd8;
-            box-shadow: 0 0 10px rgba(216, 191, 216, 0.5);
+            border: 2px solid #e6e0d1;
+            box-shadow: 0 0 10px rgba(230, 224, 209, 0.5);
         }
 
         .wedding-ring::after {
@@ -695,25 +695,25 @@
             height: 15px;
             border-radius: 50%;
             background: transparent;
-            border: 2px solid #b793da;
+            border: 2px solid #566d40;
         }
 
         .wedding-ring-2::before {
-            border-color: #e6e6fa;
-            box-shadow: 0 0 10px rgba(230, 230, 250, 0.5);
+            border-color: #f8f4e9;
+            box-shadow: 0 0 10px rgba(248, 244, 233, 0.5);
         }
 
         .wedding-ring-2::after {
-            border-color: #d8bfd8;
+            border-color: #e6e0d1;
         }
 
         .wedding-ring-3::before {
-            border-color: #b793da;
-            box-shadow: 0 0 10px rgba(183, 147, 218, 0.5);
+            border-color: #566d40;
+            box-shadow: 0 0 10px rgba(86, 109, 64, 0.5);
         }
 
         .wedding-ring-3::after {
-            border-color: #9370db;
+            border-color: #475c32;
         }
 
         @keyframes ringFloat {
@@ -826,7 +826,7 @@
     <div class="hero-section">
         <!-- Video Background -->
         <video class="hero-video" autoplay muted loop playsinline>
-            <source src="assets/videos/VN20250531_201742.mp4" type="video/mp4">
+            <source src="assets/videos/Beach Reel.mp4" type="video/mp4">
             <!-- Fallback image in case video doesn't load -->
             <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Fallback background" style="width: 100%; height: 100%; object-fit: cover;">
         </video>
@@ -942,11 +942,11 @@
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                     <div class="location-details">
-                        <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Sree Subramanya Bhadrakali Temple, Kangarapady</p>
-                        <p><i class="far fa-clock"></i> <strong>Time:</strong> 10:00 AM - 10:30 AM</p>
-                        <p><i class="fas fa-calendar-alt"></i> <strong>Date:</strong> Monday, November 3, 2025</p>
+                        <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> <br>&nbsp;&nbsp;Sree Subramanya Bhadrakali Temple, Kangarapady</p>
+                        <p><i class="far fa-clock"></i> <strong>Time:</strong>&nbsp;&nbsp; 10:00 AM - 10:30 AM</p>
+                        <p><i class="fas fa-calendar-alt"></i> <strong>Date:</strong>&nbsp;&nbsp; Monday, November 3, 2025</p>
                         <a href="https://maps.app.goo.gl/dT2j1BmRdZfwXWvn7?g_st=aw" target="_blank" class="location-button">
-                            <i class="fas fa-directions"></i> Get Directions
+                            <i class="fas fa-directions" style="color: white;"></i> Get Directions
                         </a>
                     </div>
                 </div>
@@ -965,11 +965,11 @@
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                     <div class="location-details">
-                        <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Kangarappady Town Hall</p>
-                        <p><i class="far fa-clock"></i> <strong>Time:</strong> 11:00 AM onwards</p>
-                        <p><i class="fas fa-calendar-alt"></i> <strong>Date:</strong> Monday, November 3, 2025</p>
+                        <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong>&nbsp;&nbsp; Kangarappady Town Hall</p>
+                        <p><i class="far fa-clock"></i> <strong>Time:</strong>&nbsp;&nbsp; 11:00 AM onwards</p>
+                        <p><i class="fas fa-calendar-alt"></i> <strong>Date:</strong>&nbsp;&nbsp; Monday, November 3, 2025</p>
                         <a href="https://maps.app.goo.gl/J3bL39CP9SV4ui3b9?g_st=aw" target="_blank" class="location-button">
-                            <i class="fas fa-directions"></i> Get Directions
+                            <i class="fas fa-directions" style="color: white;"></i> Get Directions
                         </a>
                     </div>
                 </div>
@@ -988,11 +988,11 @@
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                     <div class="location-details">
-                        <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> M N Rajappan Memorial Sreenarayana Auditorium</p>
-                        <p><i class="far fa-clock"></i> <strong>Time:</strong> 6:00 PM onwards</p>
-                        <p><i class="fas fa-calendar-alt"></i> <strong>Date:</strong> Monday, November 3, 2025</p>
+                        <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong><br>&nbsp;&nbsp; M N Rajappan Memorial Sreenarayana Auditorium</p>
+                        <p><i class="far fa-clock"></i> <strong>Time:</strong>&nbsp;&nbsp; 6:00 PM onwards</p>
+                        <p><i class="fas fa-calendar-alt"></i> <strong>Date:</strong> &nbsp;&nbsp;Monday, November 3, 2025</p>
                         <a href="https://maps.app.goo.gl/J3bL39CP9SV4ui3b9?g_st=aw" target="_blank" class="location-button">
-                            <i class="fas fa-directions"></i> Get Directions
+                            <i class="fas fa-directions" style="color: white;"></i> Get Directions
                         </a>
                     </div>
                 </div>
@@ -1072,8 +1072,8 @@
 
     <div class="download-section">
         <div class="container">
-            <h2 class="section-title" style="color: #6a5a7a; margin-bottom: 30px;">Save Our Invitation</h2>
-            <p style="font-size: 18px; color: #7a6a8a; margin-bottom: 40px; font-family: 'Cormorant Garamond', serif;">
+            <h2 class="section-title" style="color: #3d3d2a; margin-bottom: 30px;">Save Our Invitation</h2>
+            <p style="font-size: 18px; color: #5a5a42; margin-bottom: 40px; font-family: 'Cormorant Garamond', serif;">
                 Download our wedding invitation to keep as a memory
             </p>
             <button class="download-button" id="downloadBtn">
@@ -1087,18 +1087,18 @@
         <p style="margin-top: 10px; font-size: 14px; opacity: 0.8;">We can't wait to celebrate with you!</p>
     </footer>
 
-    <div id="invitation-card" style="display: none; width: 600px; height: 400px; background: #faf8ff; padding: 40px; text-align: center; font-family: 'Cormorant Garamond', serif; color: #6a5a7a; position: relative; overflow: hidden; border: 8px solid #e6e6fa;">
-        <div style="font-size: 60px; margin-bottom: 20px; color: #b793da;">✿</div>
+    <div id="invitation-card" style="display: none; width: 600px; height: 400px; background: #f8f4e9; padding: 40px; text-align: center; font-family: 'Cormorant Garamond', serif; color: #3d3d2a; position: relative; overflow: hidden; border: 8px solid #e6e0d1;">
+        <div style="font-size: 60px; margin-bottom: 20px; color: #566d40;">✿</div>
         <h1 style="font-size: 32px; margin-bottom: 20px; letter-spacing: 4px; text-transform: uppercase; font-weight: 400;">Wedding Invitation</h1>
-        <div style="width: 150px; height: 1px; background: #d8bfd8; margin: 20px auto; position: relative;">
-            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 25px; height: 25px; background: #faf8ff; border: 2px solid #d8bfd8; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #b793da;">✿</div>
+        <div style="width: 150px; height: 1px; background: #a6b595; margin: 20px auto; position: relative;">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 25px; height: 25px; background: #f8f4e9; border: 2px solid #a6b595; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #566d40;">✿</div>
         </div>
-        <div style="font-size: 48px; font-weight: 400; margin: 25px 0; font-family: 'Tangerine', cursive; color: #6a5a7a;">Arjun & Sajina</div>
-        <div style="width: 150px; height: 1px; background: #d8bfd8; margin: 20px auto; position: relative;">
-            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 25px; height: 25px; background: #faf8ff; border: 2px solid #d8bfd8; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #b793da;">✿</div>
+        <div style="font-size: 48px; font-weight: 400; margin: 25px 0; font-family: 'Tangerine', cursive; color: #3d3d2a;">Arjun & Sajina</div>
+        <div style="width: 150px; height: 1px; background: #a6b595; margin: 20px auto; position: relative;">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 25px; height: 25px; background: #f8f4e9; border: 2px solid #a6b595; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #566d40;">✿</div>
         </div>
         <p style="font-size: 20px; margin: 20px 0; letter-spacing: 2px;">November 3, 2025</p>
-        <p style="font-size: 16px; margin-top: 30px; color: #7a6a8a;">Sree Subramanya Bhadrakali Temple | 10:00 AM</p>
+        <p style="font-size: 16px; margin-top: 30px; color: #5a5a42;">Sree Subramanya Bhadrakali Temple | 10:00 AM</p>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
